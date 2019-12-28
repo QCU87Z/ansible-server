@@ -1,6 +1,6 @@
 ---
 
-- name: restart chrony
+- name: restart chronyd
   service:
     name: chronyd
     state: restarted

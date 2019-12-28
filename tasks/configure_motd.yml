@@ -1,0 +1,16 @@
+---
+
+- name: configure_motd | hush root motd
+  file:
+    path: /root/.hushlogin # required. Path to the file being managed.
+    owner: root
+    group: root
+    state: file
+  become: yes
+
+- name: configure_motd | drop motd.sh
+  copy:
+    src: motd.sh
+    dest: /etc/profiles.d/
+    mode: u=rwx,g=r,o=r
+  become: true

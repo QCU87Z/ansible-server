@@ -17,6 +17,10 @@ ntp_servers:
   - 2.centos.poool.ntp.org
   - 3.centos.poool.ntp.org
 
+configure_sshd: true
+
+configure_motd: true
+
 #ethernet vars
 # nmcli_ethernet:
 #   - conn_name: em1

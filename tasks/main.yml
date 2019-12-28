@@ -8,3 +8,9 @@
 
 - include: configure_ntp.yml
   when: configure_ntp
+
+- include: configure_sshd.yml
+  when: configure_sshd
+
+- include: configure_motd.yml
+  when: configure_motd

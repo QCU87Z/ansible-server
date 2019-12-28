@@ -1,0 +1,8 @@
+---
+
+- name: configure_sshd | drop sshd_config
+  template:
+    src: sshd_conf.j2
+    dest: /etc/ssh/sshd_config
+  notify: restart sshd
+  become: yes

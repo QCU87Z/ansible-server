@@ -5,8 +5,6 @@
 #server 2.centos.pool.ntp.org iburst
 #server 3.centos.pool.ntp.org iburst
 
-server {{ ntp_server }}
-
 {% for server in ntp_servers %}
 server {{ server }} iburst
 {% endfor %}

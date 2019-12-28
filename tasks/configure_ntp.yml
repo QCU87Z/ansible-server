@@ -6,6 +6,7 @@
     name: chrony
     state: present
   notify: restart chronyd 
+  become: true
 
 # drop configuration file
 - name: configure_ntp | drop chrony.conf
@@ -13,6 +14,7 @@
     src: chrony.conf.j2
     dest: /etc/chrony.conf
   notify: restart chronyd
+  become: true
 
 # enable start service
 - name: configure_ntp | start and enable chronyd
@@ -20,3 +22,4 @@
     name: chronyd
     enabled: true
     state: started
+  become: true

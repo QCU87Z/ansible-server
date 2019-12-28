@@ -9,4 +9,4 @@
   yum:
     name: "{{ item }}"
     state: present
-  with_items: "{{ install_packages }}"
+  with_items: "{{ common_packages }}"

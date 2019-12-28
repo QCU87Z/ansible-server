@@ -2,6 +2,21 @@
 
 configure_networks: true
 
+add_packages: true
+common_packages:
+  - htop
+  - vim
+  - ack
+  - net-tools
+  - bind-utils
+
+configure_ntp: true
+ntp_servers:
+  - 0.centos.poool.ntp.org
+  - 1.centos.poool.ntp.org
+  - 2.centos.poool.ntp.org
+  - 3.centos.poool.ntp.org
+
 #ethernet vars
 # nmcli_ethernet:
 #   - conn_name: em1

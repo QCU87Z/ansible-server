@@ -2,3 +2,9 @@
 
 - include: configure_network.yml
   when: configure_networks
+
+- include: add_packages.yml
+  when: add_packages
+
+- include: configure_ntp.yml
+  when: configure_ntp

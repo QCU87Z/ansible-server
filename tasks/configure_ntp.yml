@@ -1,0 +1,22 @@
+---
+
+# install chronyd
+- name: configure_ntp | install chrony
+  yum:
+    name: chrony
+    state: present
+  notify: restart chronyd 
+
+# drop configuration file
+- name: configure_ntp | drop chrony.conf
+  template:
+    src: chrony.conf.j2
+    dest: /etc/chrony.conf
+  notify: restart chronyd
+
+# enable start service
+- name: configure_ntp | start and enable chronyd
+  service:
+    name: chronyd
+    enabled: true
+    state: started

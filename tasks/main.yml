@@ -13,4 +13,6 @@
   when: configure_sshd
 
 - include: configure_motd.yml
+  tags: configure_motd
   when: configure_motd
+  

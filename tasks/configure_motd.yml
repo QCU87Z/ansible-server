@@ -2,7 +2,7 @@
 
 - name: configure_motd | hush root motd
   copy:
-    path: /root/.hushlogin
+    dest: /root/.hushlogin
     content: ""
     owner: root
     group: root
@@ -11,6 +11,6 @@
 - name: configure_motd | drop motd.sh
   copy:
     src: motd.sh
-    dest: /etc/profiles.d/
+    dest: /etc/profile.d/
     mode: u=rwx,g=r,o=r
   become: true

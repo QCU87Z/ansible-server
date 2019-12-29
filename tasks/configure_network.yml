@@ -17,7 +17,7 @@
   with_items:
     - '{{ nmcli_br }}'
   ignore_errors: true
-  
+
 - name: debug
   debug:
     var: bridge

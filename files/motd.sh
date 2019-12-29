@@ -14,14 +14,14 @@ cyan="\e[36m"
 lightGrey="\e[37m"
 
 function printHeading {
-  echo ""
+  echo -e "${cyan}"
   echo "________  _________  ____ ___  ________  ______         "
   echo "\_____  \ \_   ___ \|    |   \/   __   \/  __  \________"
   echo " /  / \  \/    \  \/|    |   /\____    />      <\___   /"
   echo "/   \_/.  \     \___|    |  /    /    //   --   \/    / "
   echo "\_____\ \_/\______  /______/    /____/ \______  /_____ \\"
   echo "       \__>       \/                          \/      \/"
-  echo ""
+  echo -e "${normal}"
 }
 
 # Draw table header
@@ -65,7 +65,7 @@ function printDiskSpace {
 
 function printNetworks {
   printNetwork "ens33"
-  echo "\t---"
+  echo ""
   printNetwork "br0"
 }
 

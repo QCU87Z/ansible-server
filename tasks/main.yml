@@ -1,6 +1,7 @@
 ---
 
 - include: configure_network.yml
+  tags: configure_network
   when: configure_networks
 
 - include: add_packages.yml

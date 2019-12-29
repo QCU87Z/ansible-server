@@ -10,6 +10,12 @@ common_packages:
   - net-tools
   - bind-utils
 
+required_packages:
+  - NetworkManager-glib
+  - nm-connection-editor
+  - libsemanage-python
+  - policycoreutils-python
+
 configure_ntp: true
 ntp_servers:
   - 0.centos.poool.ntp.org
@@ -21,21 +27,11 @@ configure_sshd: true
 
 configure_motd: true
 
-#ethernet vars
-# nmcli_ethernet:
-#   - conn_name: em1
-#     ifname: em1
-#     ip4: '{{ tenant_ip }}'
-#     gw4: '{{ tenant_gw }}'
-#   - conn_name: em2
-#     ifname: em2
-#     ip4: '{{ tenant_ip1 }}'
-#     gw4: '{{ tenant_gw }}'
-#   - conn_name: p2p1
-#     ifname: p2p1
-#     ip4: '{{ storage_ip }}'
-#     gw4: '{{ storage_gw }}'
-#   - conn_name: p2p2
-#     ifname: p2p2
-#     ip4: '{{ external_ip }}'
-#     gw4: '{{ external_gw }}'
+nmcli_br:
+  - conn_name: br0
+    ip4: 10.11.12.239/24
+    gw4: 10.11.12.1
+nmcli_br_slaves:
+  - conn_name: ens33
+    ifname: ens33
+    master: br0

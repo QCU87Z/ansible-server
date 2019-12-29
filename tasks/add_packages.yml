@@ -5,7 +5,7 @@
     name: epel-release
     state: present
   become: true
-
+    
 - name: add_packages | install common packages
   yum:
     name: "{{ common_packages }}"

@@ -1,0 +1,7 @@
+---
+
+# install chronyd
+- name: configure_misc | set hostname
+  hostname:
+    name: {{ hostname }}
+  become: true
